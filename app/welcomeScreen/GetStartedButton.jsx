@@ -5,12 +5,15 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import Animated, { FadeIn, FadeInDown, FadeOut } from "react-native-reanimated";
+import { useRouter } from "expo-router";
 
 export default function GetStartedButton() {
+  const router = useRouter();
   return (
     <Animated.View entering={FadeInDown.delay(200).springify()}>
       <TouchableOpacity
         style={{ height: hp(7), width: wp(80) }}
+        onPress={() => router.push('landingPage')}
         className="bg-rose-500 items-center justify-center mx-auto rounded-full border-[2px] border-neutral-200 mt-5"
       >
         <Text
